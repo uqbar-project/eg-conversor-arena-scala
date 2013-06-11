@@ -8,9 +8,17 @@ import org.uqbar.commons.utils.Observable
 
 @Observable
 class Conversor {
-	var millas = 0.0;
-	var kilometros = 0.0;
-	val factor_conversion_millas_kilometros = 1.609344;
+	var _country = 0.0
+	var millas = 0.0
+	var kilometros = 0.0
+	val factor_conversion_millas_kilometros = 1.609344
 	
-	def convertir() = {kilometros = millas * factor_conversion_millas_kilometros}
+	def convertir() = {kilometros = millas * factor_conversion_millas_kilometros; country = kilometros }
+	
+	
+	def country_=(country:Double) {
+		this._country = country;
+	}
+	
+	def country = this._country
 }
