@@ -22,24 +22,23 @@ class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](o
 	override def addActions(actionsPanel:Panel) = {
 		new Button(actionsPanel) //
 		.setCaption("Convertir a kilómetros")
-		.onClick(new MessageSend(this.getModelObject(), "convertir"));
+		.onClick(new MessageSend(this.getModelObject(), "convertir"))
 	}
 
 	override def createFormPanel(mainPanel:Panel ) {
-		this.setTitle("Conversor de millas a kilómetros");
-		mainPanel.setLayout(new VerticalLayout());
+		this.setTitle("Conversor de millas a kilómetros")
+		mainPanel.setLayout(new VerticalLayout())
 
-		new Label(mainPanel).setText("Ingrese la longitud en millas");
+		new Label(mainPanel).setText("Ingrese la longitud en millas")
 
-		new TextBox(mainPanel).bindValueToProperty("millas");
+		new TextBox(mainPanel).bindValueToProperty("millas")
 
 		new Label(mainPanel) //
 		.setBackground(Color.ORANGE)
-		.bindValueToProperty("kilometros");
+		.bindValueToProperty("kilometros")
 
-		new Label(mainPanel).setText(" kilómetros");
+		new Label(mainPanel).setText(" kilómetros")
 		new Label(mainPanel).bindValueToProperty("country")
-		return
 	}
 }
 
