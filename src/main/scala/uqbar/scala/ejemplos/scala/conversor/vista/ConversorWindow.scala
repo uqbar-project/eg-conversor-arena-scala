@@ -15,14 +15,16 @@ import org.uqbar.arena.Application
 
 import uqbar.scala.ejemplos.scala.conversor.modelo.Conversor
 
-
+/**
+ * 
+ * @author uqbar
+ */
 class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](owner, new Conversor()) {
-
 
 	override def addActions(actionsPanel:Panel) = {
 		new Button(actionsPanel) //
-		.setCaption("Convertir a kilómetros")
-		.onClick(new MessageSend(this.getModelObject(), "convertir"))
+			.setCaption("Convertir a kilómetros")
+			.onClick(new MessageSend(this.getModelObject(), "convertir"))
 	}
 
 	override def createFormPanel(mainPanel:Panel ) {
@@ -34,8 +36,8 @@ class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](o
 		new TextBox(mainPanel).bindValueToProperty("millas")
 
 		new Label(mainPanel) //
-		.setBackground(Color.ORANGE)
-		.bindValueToProperty("kilometros")
+			.setBackground(Color.ORANGE)
+			.bindValueToProperty("kilometros")
 
 		new Label(mainPanel).setText(" kilómetros")
 		new Label(mainPanel).bindValueToProperty("country")
