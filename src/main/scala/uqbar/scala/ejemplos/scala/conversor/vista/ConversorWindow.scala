@@ -26,7 +26,13 @@ class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](o
 	override def addActions(actionsPanel:Panel): Unit = { 
 		new Button(actionsPanel) //
 			.setCaption("Convertir a kilómetros")
-			.onClick  { () => getModelObject.convertir }
+			// for Scala 2.12 .onClick  { () => getModelObject.convertir }
+			.onClick (new Action() { 
+			  override def execute() { 
+			    getModelObject.convertir 
+			  } 
+			} 
+			)
 	}
 
 	override def createFormPanel(mainPanel:Panel ) {
