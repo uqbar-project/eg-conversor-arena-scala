@@ -2,7 +2,6 @@ package uqbar.scala.ejemplos.scala.conversor.vista
 
 import java.awt.Color
 
-import org.uqbar.arena.actions.MessageSend
 import org.uqbar.arena.layout.VerticalLayout
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.widgets.Label
@@ -14,6 +13,8 @@ import org.uqbar.arena.windows.WindowOwner
 import org.uqbar.arena.Application
 
 import uqbar.scala.ejemplos.scala.conversor.modelo.Conversor
+import org.uqbar.lacar.ui.model.Action
+
 
 /**
  * 
@@ -21,10 +22,10 @@ import uqbar.scala.ejemplos.scala.conversor.modelo.Conversor
  */
 class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](owner, new Conversor()) {
 
-	override def addActions(actionsPanel:Panel) = {
+	override def addActions(actionsPanel:Panel): Unit = {
 		new Button(actionsPanel) //
 			.setCaption("Convertir a kilómetros")
-			.onClick(new MessageSend(this.getModelObject(), "convertir"))
+			.onClick( () => { getModelObject.convertir } )
 	}
 
 	override def createFormPanel(mainPanel:Panel ) {
@@ -40,7 +41,6 @@ class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](o
 			.bindValueToProperty("kilometros")
 
 		new Label(mainPanel).setText(" kilómetros")
-		new Label(mainPanel).bindValueToProperty("country")
 	}
 }
 
