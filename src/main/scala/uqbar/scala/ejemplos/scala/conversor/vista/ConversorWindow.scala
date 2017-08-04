@@ -15,7 +15,7 @@ import org.uqbar.arena.windows.WindowOwner
 import uqbar.scala.ejemplos.scala.conversor.modelo.Conversor
 import org.uqbar.lacar.ui.model.Action
 import org.uqbar.arena.widgets.NumericField
-
+import org.uqbar.arena.scala.ArenaScalaImplicits
 
 /**
  * 
@@ -26,13 +26,7 @@ class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](o
 	override def addActions(actionsPanel:Panel): Unit = { 
 		new Button(actionsPanel) //
 			.setCaption("Convertir a kilómetros")
-			// for Scala 2.12 .onClick  { () => getModelObject.convertir }
-			.onClick (new Action() { 
-			  override def execute() { 
-			    getModelObject.convertir 
-			  } 
-			} 
-			)
+			.onClick  { () => getModelObject.convertir }
 	}
 
 	override def createFormPanel(mainPanel:Panel ) {
