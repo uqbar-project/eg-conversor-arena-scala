@@ -7,6 +7,7 @@ import org.uqbar.commons.model.annotations.Observable
  */
 
 //@Observable
+@Observable
 class Conversor {
 	var millas = 0.0
 	var kilometros = 0.0
