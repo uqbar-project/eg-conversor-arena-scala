@@ -6,7 +6,6 @@ import org.uqbar.commons.model.annotations.Observable
  * Esta clase realiza la conversion de millas a kilometros
  */
 
-//@Observable
 @Observable
 class Conversor {
 	var millas = 0.0

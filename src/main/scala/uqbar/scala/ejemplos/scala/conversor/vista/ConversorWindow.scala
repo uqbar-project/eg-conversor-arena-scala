@@ -15,7 +15,7 @@ import org.uqbar.arena.windows.WindowOwner
 import uqbar.scala.ejemplos.scala.conversor.modelo.Conversor
 import org.uqbar.lacar.ui.model.Action
 import org.uqbar.arena.widgets.NumericField
-import org.uqbar.arena.scala.ArenaScalaImplicits
+import org.uqbar.arena.scala.ArenaScalaImplicits.closureToAction
 
 /**
  * 
