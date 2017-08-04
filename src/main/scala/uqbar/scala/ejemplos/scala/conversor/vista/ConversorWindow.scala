@@ -14,6 +14,7 @@ import org.uqbar.arena.windows.WindowOwner
 
 import uqbar.scala.ejemplos.scala.conversor.modelo.Conversor
 import org.uqbar.lacar.ui.model.Action
+import org.uqbar.arena.widgets.NumericField
 
 
 /**
@@ -38,7 +39,7 @@ class ConversorSimpleWindow(owner:WindowOwner) extends SimpleWindow[Conversor](o
 
 		new Label(mainPanel).setText("Ingrese la longitud en millas")
 
-		new TextBox(mainPanel).bindValueToProperty("millas")
+		new NumericField(mainPanel).bindValueToProperty("millas")
 
 		new Label(mainPanel) //
 			.setBackground(Color.ORANGE)
